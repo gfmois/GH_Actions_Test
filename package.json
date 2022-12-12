@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/gfmois/GH_Actions_Test/issues"
   },
-  "homepage": "https://github.com/gfmois/GH_Actions_Test#readme"
+  "homepage": "https://github.com/gfmois/GH_Actions_Test#readme",
+  "dependencies": {
+    "eslint-config-standard": "^17.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.29.0"
+  }
 }
