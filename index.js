@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-undef
 let express = require('express')
 let app = express()
 
