@@ -20,9 +20,11 @@ jobs:
           LINTER_RULES_PATH: /
   test-execution:
     runs-on: ubuntu-latest
+    needs: linter-execution
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
-      - name: Run Jest Tests
+      - name: Install Jest
         run: npm install jest
+      - name: Run Jest Test
         run: npm run test
