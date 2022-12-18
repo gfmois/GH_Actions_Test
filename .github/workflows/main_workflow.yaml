@@ -36,6 +36,4 @@ jobs:
         uses: adeloyedeji/github-actions-hello@v1.0 
         id: hello
         with:
-          who-to-greet: ${{ DESTINATION_PERSON }} GFMOIS
-    env:
-      DESTINATION_PERSON: 2DAW
+          who-to-greet: 2DAW GFMOIS
