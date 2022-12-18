@@ -30,7 +30,7 @@ jobs:
         run: npm run test
   enviroment_test_execution:
     runs-on: ubuntu-latest
-    name: environment
+    name: environment_
     steps:
       - name: Enviroment
         uses: adeloyedeji/github-actions-hello@v1.0 
