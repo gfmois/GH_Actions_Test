@@ -32,7 +32,6 @@ jobs:
     runs-on: ubuntu-latest
     name: environment
     steps:
-      - name: enviroment
       uses: adeloyedeji/github-actions-hello@v1.0 
       id: hello
       with:
