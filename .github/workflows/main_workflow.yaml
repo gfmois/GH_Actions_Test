@@ -27,4 +27,18 @@ jobs:
       - name: Install Jest
         run: npm install jest
       - name: Run Jest Test
+        id: jest
         run: npm run test
+      - name: Send email
+        uses: dawidd6/action-send-mail@v3
+        with: 
+          connection_url: ${{ secrets.MAIL_CONNECTION }}
+          server_address: smtp.email.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: Resultado Tests Jest
+          to: daw.moisesguerola@gmail.com
+          from: Moisés Guerola
+          body: Test del ${{ github.repository }} han fallado!
