@@ -33,6 +33,7 @@ jobs:
       - name: Install Jest
         run: npm install jest
       - name: Run Jest Test
+        run: npm run test
         id: jest
         continue-on-error: true
       - name: Fails
