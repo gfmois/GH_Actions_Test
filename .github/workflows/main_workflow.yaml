@@ -33,4 +33,18 @@ jobs:
       - name: Install Jest
         run: npm install jest
       - name: Run Jest Test
-        run: npm run test
+        id: jest
+        run: |
+          mkdir ${{ runner.temp }}/build.logs
+          npm run test --log-path ${{ runner.temp }}/build.logs
+      - name: Send email
+        uses: dawidd6/action-send-mail@v3
+        if: ${{ failure() }}
+        with: 
+          server_address: smtp.email.com
+          server_port: 465
+          secure: true
+          subject: Resultado Tests Jest
+          to: daw.moisesguerola@gmail.com
+          from: Moisés Guerola
+          body: Test del ${{ github.repository }} han fallado!
