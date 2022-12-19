@@ -39,4 +39,4 @@ jobs:
         continue-on-error: true
       - name: Fails
         if: steps.jest.outcome != 'success'
-        run: echo steps.jest.outcome
+        run: echo Error
