@@ -7,6 +7,9 @@ inputs:
   telegram_id_user:
     description: "Id del Usuario de Telegram"
     required: true
+  name:
+    description: "Nombre del usuario"
+    required: true
 outputs:
   msg:
     description: "Mensaje de Respuesta del Script"
