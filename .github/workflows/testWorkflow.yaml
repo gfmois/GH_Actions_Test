@@ -1,10 +1,14 @@
-name: primer-ejemplo
-on: [push]
+name: telegram-bot
+on:
+  push:
+    branches:
+      - "send_telegram_action"
 jobs:
-  check-bats-version:
+  send_message:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-      - run: npm install -g bats
-      - run: bats -v
+      - uses: ./.github/actions
+        with:
+          telegram_token: ${{ secrets.TELEGRAM_TOKEN }}
+          telegram_id_user: ${{ secrets.TELEGRAM_ID_USER }}
