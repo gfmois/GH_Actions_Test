@@ -12,4 +12,4 @@ jobs:
         with:
           telegram_token: ${{ secrets.TELEGRAM_TOKEN }}
           telegram_id_user: ${{ secrets.TELEGRAM_ID_USER }}
-          user_name: "Moisés"
+          user_name: ${{ secrets.NAME }}
