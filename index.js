@@ -12,7 +12,7 @@ try {
 
     bot.sendMessage(chatID, message)
     core.setOutput('msg', "Mensaje enviado correctamente")
-    process.exit(0)
+    core.ExitCode.Success
 } catch (e) {
     core.setFailed("Hubo un error")
 }
