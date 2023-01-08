@@ -4,7 +4,7 @@ const core = require("@actions/core")
 const token = core.getInput("telegram_token")
 const chatID = core.getInput("telegram_id_user")
 
-const bot = new TelegramBot(token, { polling: false });
+const bot = new TelegramBot(token, { polling: true });
 
 try {
     const message = `Workflow ejecutado correctamente tras el último commit. Saludos ${core.getInput("user_name")}`;
