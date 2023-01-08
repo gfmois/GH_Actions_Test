@@ -12,6 +12,7 @@ async function run_bot() {
         const message = `Workflow ejecutado correctamente tras el último commit. Saludos ${name}`;
 
         await bot.sendMessage(chatID, message)
+        return
     } catch (e) {
         core.setFailed("Hubo un error")
     }
