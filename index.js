@@ -6,16 +6,13 @@ const chatID = core.getInput("telegram_id_user")
 
 const bot = new TelegramBot(token, { polling: true });
 
-async function run_bot() {
-    try {
-        const name = process.argv[2];
-        const message = `Workflow ejecutado correctamente tras el último commit. Saludos ${name}`;
+try {
+    const name = process.argv[2];
+    const message = `Workflow ejecutado correctamente tras el último commit. Saludos ${name}`;
 
-        await bot.sendMessage(chatID, message)
-        return
-    } catch (e) {
-        core.setFailed("Hubo un error")
-    }
-} 
-
-run_bot().then(() => core.setOutput('msg', "Mensaje enviado correctamente"))
+    bot.sendMessage(chatID, message)
+    core.setOutput('msg', "Mensaje enviado correctamente")
+    process.exit(0)
+} catch (e) {
+    core.setFailed("Hubo un error")
+}
