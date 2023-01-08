@@ -1,0 +1,31 @@
+name: react_deploy_workflow
+on:
+  push:
+    branches:
+      - react_app_deploy
+jobs:
+  build-job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install and build
+        run: npm install && npm run build
+      - uses: actions/upload-artifact@v3
+        with:
+          name: react-project
+          path: build/
+  deploy-job:
+    needs: build-job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Artifact
+        uses: actions/download-artifact@v2
+        with: 
+          name: react-project
+      - name: Deploy on Surge.sh
+        uses:  dswistowski/surge-sh-action@v1
+        with:
+          domain: 'react-app-mguerola.surge.sg'
+          project: '.'
+          login: ${{ secrets.SURGE_LOGIN }}
+          token: ${{ secrets.SURGE_TOKEN }}
