@@ -7,7 +7,7 @@ const chatID = core.getInput("telegram_id_user")
 const bot = new TelegramBot(token, { polling: true });
 
 try {
-    const name = core.getInput('name');
+    const name = core.getInput("name");
     const message = `Workflow ejecutado correctamente tras el último commit. Saludos ${name}`;
 
     bot.sendMessage(chatID, message)
