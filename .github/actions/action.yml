@@ -7,7 +7,7 @@ inputs:
   telegram_id_user:
     description: "Id del Usuario de Telegram"
     required: true
-  name:
+  user_name:
     description: "Nombre del usuario"
     required: true
 outputs:
