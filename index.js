@@ -12,7 +12,6 @@ try {
 
     bot.sendMessage(chatID, message)
     core.setOutput('msg', "Mensaje enviado correctamente")
-    core.ExitCode.Success
 } catch (e) {
-    core.setFailed("Hubo un error")
+    core.setFailed(e.message)
 }
